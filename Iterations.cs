@@ -129,7 +129,10 @@ namespace DotnetIteration
 
     public static bool EveryoneIsOdd(List<int> data)
     {
-      throw new System.NotImplementedException();
+      var everyoneIsOdd = data.All(number =>
+      {
+        return number % 2 == 1;
+      });
     }
     /*
       * 8) Define a function findTheNeedle that accepts an list of
