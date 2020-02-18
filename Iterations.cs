@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DotnetIteration.Models;
+using Microsoft.VisualBasic;
 
 namespace DotnetIteration
 {
@@ -27,7 +28,15 @@ namespace DotnetIteration
    */
     public static IEnumerable<string> Yelling(List<string> words)
     {
-      throw new System.NotImplementedException();
+      var yelledword = words.Select(word =>
+      {
+        return word.ToUpper();
+
+      });
+      return yelledword;
+
+
+
     }
 
     /* 
@@ -38,8 +47,13 @@ namespace DotnetIteration
 
     public static IEnumerable<int> Double(List<int> numbers)
     {
-      throw new System.NotImplementedException();
+      var doubleTrouble = numbers.Select(number =>
+      {
+        return number * 2;
+      });
+      return doubleTrouble;
     }
+
     /*
       * 3) Define a function stringyIndexes() that takes an list of
       * strings as an argument and returns a new list with each string
@@ -47,7 +61,12 @@ namespace DotnetIteration
       */
     public static IEnumerable<string> StringyIndexes(List<string> data)
     {
-      throw new System.NotImplementedException();
+      var addingIndexString = data.Select((dat) =>
+      {
+        return dat + $" is at index {data.IndexOf(dat)}";
+
+      });
+      return addingIndexString;
     }
     /*
        * 4) Define a function onlyTheEvenSurvive that accepts an list of
@@ -56,7 +75,11 @@ namespace DotnetIteration
 
     public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
     {
-      throw new System.NotImplementedException();
+      var evenNumbers = data.Select(number =>
+      {
+        return number % 2;
+      });
+      return evenNumbers;
     }
     /*
         * 5) Define a function onlyTheEvenIndexedSurvive that accepts an list of
@@ -64,8 +87,14 @@ namespace DotnetIteration
         */
     public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
     {
-      throw new System.NotImplementedException();
+      var onlyTheEvenIndexedSurvive = data.Where((number, index) =>
+        {
+          return index % 2 == 0;
+        });
+      return onlyTheEvenIndexedSurvive;
     }
+
+
     /*
       * 6)  Define a function bestMoviesOfTheYear that accepts an list of
       * movie objects AND a year and returns the names of movies that are
@@ -81,7 +110,15 @@ namespace DotnetIteration
       */
     public static IEnumerable<string> BestMovieOfTheYear(List<Movie> data, int year)
     {
-      throw new System.NotImplementedException();
+      var bestMoviesOfTheYear = data.Where((name, year) =>
+      {
+        return name.year == year && name.score > 90;
+      });
+      data.Select(Movie =>
+       {
+         return bestMoviesOfTheYear;
+       });
+
     }
 
     /*
@@ -128,5 +165,5 @@ namespace DotnetIteration
       throw new System.NotImplementedException();
     }
   }
-
 }
+
